@@ -1,0 +1,14 @@
+<html>
+   <body>
+      {% if filepath %}
+        <IMG SRC="{{filepath}} " width="128" height="128" BORDER="1"> predict:{{predict}} probability:{{proba}}% <BR>
+        <HR>
+      {% endif %}
+      ファイルを選択して送信してください<BR>
+      <form action = "./" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+   </body>
+</html>
