@@ -1,2 +1,2 @@
 # face_classification
-Classify cute face or not
+Cute face image classification on Raspberry Pi with Keras, Tensorflow, OpenCV, and Flask.
