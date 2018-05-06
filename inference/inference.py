@@ -29,7 +29,7 @@ def load_face_img(file, target_size):
     # 顔領域の探索
     face = cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=3, minSize=(30, 30))
 
-    # 検出部分の切り出し。最初に検出した１つだけを切り出す（１画像に顔が１つの前提）
+    # 検出部分の切り出し。最初に検出した１つだけを切り出す（１画像に顔１つが前提）
     if len(face):
         x, y, w, h = face[0]
         face_img = img[y:y+h, x:x+w]
@@ -69,7 +69,7 @@ def classify():
     #モデルを読み込む
     model = model_from_json(open('model.json').read())
 
-    # 学習結果を読み込む
+    # 重みを読み込む
     model.load_weights('model.h5')
 
     model.compile(loss=keras.losses.categorical_crossentropy,
